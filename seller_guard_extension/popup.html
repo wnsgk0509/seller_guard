@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>셀러가드 - 상표권 필터</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-area">
+        <span class="logo-icon">🛡️</span>
+        <div>
+          <h1 class="logo-title">셀러가드</h1>
+          <p class="logo-sub">상표권 & 고소 위험 1초 필터</p>
+        </div>
+      </div>
+      <span class="badge-free">PROTOTYPE</span>
+    </header>
+
+    <!-- Main Input Section -->
+    <section class="input-section">
+      <label for="productInput" class="input-label">검사할 상품명 또는 키워드 입력</label>
+      <div class="textarea-wrapper">
+        <textarea 
+          id="productInput" 
+          placeholder="예: 갤럭시 차량용 핸드폰 거치대 스마트폰 그립톡 크록스 지비츠 세트 레고 호환 블록"
+          rows="3"
+        ></textarea>
+        <button id="clearBtn" class="clear-btn" title="비우기">✕</button>
+      </div>
+
+      <div class="quick-examples">
+        <span class="example-label">💡 테스트 예시:</span>
+        <button class="example-tag" data-text="스마트폰 그립톡 거치대 크록스 지비츠 세트">그립톡/지비츠</button>
+        <button class="example-tag" data-text="레고 호환 조립 블록 나이키 스타일 운동화">레고/나이키</button>
+      </div>
+
+      <button id="scanBtn" class="primary-btn">
+        <span>🔍 1초 만에 위험 키워드 스캔</span>
+      </button>
+    </section>
+
+    <!-- Result Section -->
+    <section id="resultSection" class="result-section hidden">
+      <!-- Status Banner -->
+      <div id="statusBanner" class="status-banner">
+        <span id="statusIcon" class="status-icon">⚠️</span>
+        <div>
+          <h3 id="statusTitle" class="status-title">위험 키워드 발견</h3>
+          <p id="statusDesc" class="status-desc">로펌 내용증명 및 판매정지 위험이 있습니다.</p>
+        </div>
+      </div>
+
+      <!-- Detected Risk Words List -->
+      <div class="risk-list-container">
+        <h4 class="section-subtitle">🚨 감지된 위험 상표권</h4>
+        <div id="riskList" class="risk-list">
+          <!-- Dynamic Risk Cards inserted here -->
+        </div>
+      </div>
+
+      <!-- Safe Title Box -->
+      <div class="safe-title-container">
+        <div class="safe-title-header">
+          <h4 class="section-subtitle">✨ 추천 안전 상품명</h4>
+          <span class="safe-tag">안전 검증 완료</span>
+        </div>
+        <div class="safe-title-box">
+          <p id="safeTitleText" class="safe-title-text"></p>
+          <button id="copyBtn" class="copy-btn">📋 원클릭 복사</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Trust Badge & Disclaimer -->
+    <footer class="footer">
+      <p class="footer-text">🔒 개인정보 및 매출 데이터를 수집하지 않는 안전한 로컬 도구</p>
+      <p class="footer-subtext">본 도구는 1차 사전 자가진단 보조 도구이며 법적 효력을 갖지 않습니다.</p>
+    </footer>
+
+    <!-- Legal Disclaimer Splash Modal (First-time user required) -->
+    <div id="legalModal" class="legal-modal-overlay hidden">
+      <div class="legal-modal-card">
+        <div class="legal-icon">⚖️</div>
+        <h2 class="legal-title">셀러가드 이용 전 필수 확인</h2>
+        <p class="legal-subtitle">안전한 서비스 이용을 위해 아래 사항을 확인해 주세요.</p>
+        
+        <div class="legal-notice-box">
+          <ul class="legal-list">
+            <li><strong>1. 자가진단 보조 도구:</strong> 본 프로그램은 텍스트 패턴 매칭에 기반한 사전 자가진단 보조 도구이며, 변호사/변리사의 법률 자문이나 특허청 공식 심사를 대신하지 않습니다.</li>
+            <li><strong>2. 법적 책임 배제:</strong> 상표권 침해 여부는 법원 및 특허청의 고유 판단 영역입니다. 프로그램 미감지로 인한 내용증명 수령, 합의금, 계정 정지 등에 대해 개발사는 어떠한 법적 책임도 부담하지 않습니다.</li>
+            <li><strong>3. 배상 책임의 한도:</strong> 어떠한 법률적 다툼에서도 개발사의 손해배상 책임 총액은 이용자가 지불한 실 결제 금액을 초과할 수 없습니다.</li>
+          </ul>
+        </div>
+
+        <label class="legal-checkbox-label">
+          <input type="checkbox" id="legalAgreeCheck">
+          <span>위 내용을 모두 숙지하였으며, 자가진단 보조 도구로 사용하는 것에 동의합니다. (필수)</span>
+        </label>
+
+        <button id="legalAgreeBtn" class="legal-btn" disabled>
+          동의하고 셀러가드 시작하기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

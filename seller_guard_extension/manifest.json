@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "셀러가드 (SellerGuard) - 1초 상표권 & 로펌 고소 필터",
+  "version": "1.0.0",
+  "description": "스마트스토어, 쿠팡 상품명의 상표권 침해 및 로펌 고소 위험 키워드를 1초 만에 감별하고 안전한 대체어로 바꿔줍니다.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ]
+}
